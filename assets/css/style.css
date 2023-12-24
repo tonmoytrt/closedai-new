@@ -4096,6 +4096,17 @@ ul.cs-list.cs-style2 li:not(:last-child) {
     -webkit-transform: rotate(0deg);
   }
 }
+
+.para_ban {
+  width: 98%;
+  max-width: 500px;
+  margin: 0 auto;
+  float: left;
+  height: 150px;
+  padding-top: 20px;
+  color: #fff;
+  font-size: 19px;
+}
 @media screen and (max-width: 768px) {
   .d_none {
     display: none;
@@ -4103,7 +4114,18 @@ ul.cs-list.cs-style2 li:not(:last-child) {
   .shake_img {
     width: 95%;
     margin-top: 40px;
-
-    -webkit-animation: rotation 2s infinite linear;
+  }
+  /* .ca_pad {
+    margin-top: 50px;
+  } */
+  .para_ban {
+    width: 98%;
+    max-width: 500px;
+    margin: 0 auto;
+    float: left;
+    height: 180px;
+    padding-top: 20px;
+    color: #fff;
+    font-size: 19px;
   }
 }
