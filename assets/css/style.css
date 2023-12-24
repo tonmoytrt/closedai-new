@@ -4067,7 +4067,7 @@ ul.cs-list.cs-style2 li:not(:last-child) {
   color: #1a188d;
 }
 .shake_img {
-  margin-left: -40px;
+  width: 400px;
 
   -webkit-animation: rotation 2s infinite linear;
 }
@@ -4099,5 +4099,11 @@ ul.cs-list.cs-style2 li:not(:last-child) {
 @media screen and (max-width: 768px) {
   .d_none {
     display: none;
+  }
+  .shake_img {
+    width: 95%;
+    margin-top: 40px;
+
+    -webkit-animation: rotation 2s infinite linear;
   }
 }
