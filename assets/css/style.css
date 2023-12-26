@@ -4107,6 +4107,53 @@ ul.cs-list.cs-style2 li:not(:last-child) {
   color: #fff;
   font-size: 19px;
 }
+
+/* video section */
+/* body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    } */
+/* 
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Place the video behind other content */
+
+/* .video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+} */
+
+/* .video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+
+/* .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}  */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
 @media screen and (max-width: 768px) {
   .d_none {
     display: none;
