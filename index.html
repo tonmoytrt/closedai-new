@@ -181,12 +181,20 @@
         <div class="col-lg-6 wow fadeInRight " data-wow-duration="1s " data-wow-delay="0.4s " >
           <!-- <img src="assets/img/logo.png" style="max-width:450px;height: 350px; width:100%" class="rounded d_none" alt=" " > -->
         
-         <video width="640" height="360" autoplay  loop>
+         <video id="myVideo" width="640" height="360" autoplay  loop>
   <source src="assets/img/vid.mp4" type="video/mp4">
     <source src="video.webm" type="video/webm">
   Your browser does not support the video tag.
 </video> 
+<script>
+  window.onload = function() {
+    // Get a reference to the video element
+    var video = document.getElementById("myVideo");
 
+    // Play the video
+    video.play();
+  };
+</script>
  <!-- <div class="video-container">
     <video autoplay loop  playsinline>
       <source src="assets/img/vid.mp4" type="video/mp4">
