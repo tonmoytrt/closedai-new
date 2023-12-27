@@ -239,16 +239,16 @@
     /*--------------------------------------------------------------
       11. Modal Video
     --------------------------------------------------------------*/
-    function modal() {
-        $(".cs-modal_btn").on('click', function() {
-            var modalData = $(this).attr("data-modal")
-            $(`[data-modal='${modalData}']`).addClass('active')
-        })
-        $(".cs-close_modal").on('click', function() {
-            var modalData = $(this).parents('.cs-modal').attr("data-modal")
-            $(`[data-modal='${modalData}']`).removeClass('active')
-        })
-    }
+    // function modal() {
+    //     $(".cs-modal_btn").on('click', function() {
+    //         var modalData = $(this).attr("data-modal")
+    //         $(`[data-modal='${modalData}']`).addClass('active')
+    //     })
+    //     $(".cs-close_modal").on('click', function() {
+    //         var modalData = $(this).parents('.cs-modal').attr("data-modal")
+    //         $(`[data-modal='${modalData}']`).removeClass('active')
+    //     })
+    // }
 
     /*--------------------------------------------------------------
       16. Accordian
