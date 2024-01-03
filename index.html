@@ -33,15 +33,109 @@
 <style>
 
 </style>
+<style type="text/css">
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 99999;
+        border-radius: 10px;
+      }
 
+      .mod_content {
+        background-color: #131740;
+        width: 400px;
+        margin: 100px auto;
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      /* Hide the modal when not displayed */
+      .hidden {
+        display: none;
+      }
+
+      #yesButton {
+        padding: 8px 28px;
+        margin-right: 15px;
+        outline: none;
+        border: none;
+        background-color: #ff5cbb;
+        color: #fff;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+      #noButton {
+        padding: 8px 28px;
+        outline: none;
+        border: none;
+        background-color: #ff5cbb;
+        color: #fff;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+      .faq_inner .card-header h4 button::before {
+        display: none !important;
+      }
+
+      @media screen and (max-width: 768px) {
+        .mod_content {
+          width: 95%;
+        }
+        .mob_space {
+          margin-top: 50px;
+        }
+      }
+    </style>
 
 <body class="cs-dark">
-    <div class="cs-preloader cs-white_bg cs-center">
+    <!-- <div class="cs-preloader cs-white_bg cs-center">
         <div class="cs-preloader_in">
             <img src="assets/img/logo.png" alt="Logo">
            
         </div>
-    </div>
+    </div> -->
+     <div id="myModal" class="modal">
+          <div class="mod_content" style="background-color: #131740">
+            <p style="color: #fff; font-size: 17px">
+              Are you ready to explore
+              MommyMilkersGrok420Sonic10Obama6900TaylorSwiftInu?
+            </p>
+            <div
+              style="
+                text-align: center;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <img
+                src="/images/logo.png"
+                style="width: 100px; margin: 20px 0"
+                alt=""
+              />
+            </div>
+            <div
+              class="flex_dis"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <button id="yesButton">Yes</button>
+              <button id="noButton">No</button>
+            </div>
+          </div>
+        </div>
+        <audio style="opacity: 1" id="closingAudio" src="/assets/img/audio.mp3"></audio>
+        
     <!-- Start Header Section -->
     <header class="cs-site_header cs-style1 cs-sticky-header cs-primary_color">
         <div class="cs-main_header">
@@ -143,7 +237,9 @@
         </div>
     </section>
     <!-- End Hero -->
-
+<!-- <div style="padding:90px 0">
+   <audio style="opacity: 1" id="closingAudio" src="/assets/img/audio.mp3"></audio>
+</div> -->
     <!-- video section -->
     <!-- <section>
       
@@ -186,15 +282,7 @@
     <source src="video.webm" type="video/webm">
   Your browser does not support the video tag.
 </video> 
-<script>
-  window.onload = function() {
-    // Get a reference to the video element
-    var video = document.getElementById("myVideo");
 
-    // Play the video
-    video.play();
-  };
-</script>
  <!-- <div class="video-container">
     <video autoplay loop  playsinline>
       <source src="assets/img/vid.mp4" type="video/mp4">
@@ -232,13 +320,19 @@
       <div id="particles-js" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
     
     </div>
-    <div class="wrapper">
+    <div class="wrapper" style="background-color: #000000c7;padding:30px 40px 0;border-radius:8px">
         <div class="row wow fadeIn " data-wow-duration="1s " data-wow-delay="0.4s ">
-        <div class="col-lg-6 col-md-6 text-center">
-        <img src="/assets/img/Screenshot_1.png" alt="" style="width:100%;max-width:470px;margin:7px">
+        <div class="col-lg-6 col-md-6 ">
+      <div class="tkn_text">
+         <h4> Ticker : $TOM</h4>
+         <h4> Supply : 10M</h4>
+         <h4> Tax : 0/0</h4>
+         <h4> Ca  : 0x00000000000000000</h4>
+      </div>
+
         </div>
         <div class="col-lg-6 col-md-6 text-center">
-          <img src="/assets/img/Screenshot_1.png" alt="" style="width:100%;max-width:470px;margin:7px">
+          <img src="/assets/img/tkn2.png" alt="" style="width:100%;max-width:470px;margin:7px">
         </div>
          
       </div>
@@ -568,8 +662,15 @@
     </div>dexscreener.com/ethereum/
   </div> -->
   <!-- Start Connect Modal -->
+
+  <!-- pop up modal  -->
+  <!-- modal section -->
+
+
+       
+  <!-- pop up modal  -->
   <!-- Start Mint Modal -->
-  <div class="cs-modal " data-modal="mint ">
+  <!-- <div class="cs-modal " data-modal="mint ">
     <div class="cs-modal_in ">
       <div class="cs-modal_container cs-white_bg ">
         <button class="cs-close_modal cs-center cs-primary_bg ">
@@ -618,11 +719,49 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Start Mint Modal -->
 
   <!-- Script -->
   <script>
+
+    // modal content
+ window.onload = function () {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+
+            // Close the modal when clicking outside of it
+            window.onclick = function (event) {
+              var closeButton = document.getElementById("closeModal");
+              var closingAudio = document.getElementById("closingAudio");
+
+              const yesButton = document.getElementById("yesButton");
+              const noButton = document.getElementById("noButton");
+
+              if (yesButton) {
+                modal.style.display = "none";
+                closingAudio.play();
+              } else {
+                if (noButton) {
+                  modal.style.display = "none";
+                  closingAudio.play();
+                }
+              }
+
+              // yesButton.addEventListener("click", function () {
+              //   modal.style.display = "none";
+              //   closingAudio.play();
+              // });
+
+              // // Hide the modal when "No" is clicked
+              // noButton.addEventListener("click", function () {
+              //   modal.style.display = "none";
+              // });
+            };
+          };
+
+
+
     particlesJS('particles-js', {
     particles: {
       number: {
@@ -734,6 +873,15 @@
     retina_detect: true
   });
   
+// video autoplay code
+ window.onload = function() {
+    // Get a reference to the video element
+    var video = document.getElementById("myVideo");
+
+    // Play the video
+    video.play();
+  };
+
 
   // type writer js for banner paragraph
   window.onload = function() {
